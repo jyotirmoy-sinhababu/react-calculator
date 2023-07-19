@@ -5,21 +5,44 @@ export const globalContext = createContext();
 
 const DataProvider = ({ children }) => {
   const [cal, setCal] = useState({
-    num: '',
-
+    numOne: '',
+    numTwo: '',
+    sign: '',
     res: '',
   });
 
   const controlNum = (value) => {
-    setCal({
-      ...cal,
-      num: cal.num === 0 && value === 0 ? 0 : cal.num + value,
-    });
+    !cal.sign
+      ? setCal({ ...cal, numOne: cal.numOne + value })
+      : setCal({ ...cal, numTwo: cal.numTwo + value });
   };
-  console.log(cal.num);
+  console.log(cal.numOne);
+  console.log(cal.numTwo);
+  const detectSign = (value) => {
+    if (value == '+' || value == '-' || value == 'x' || value == '/') {
+      setCal({ ...cal, sign: value });
+    }
+  };
 
+  const evaluteFunction = () => {
+    if (cal.sign && cal.numOne && cal.numTwo) {
+      if (cal.sign == '+') {
+        setCal({ ...cal, res: +cal.numOne + +cal.numTwo });
+      }
+      if (cal.sign == '-') {
+        setCal({ ...cal, res: +cal.numOne - +cal.numTwo });
+      }
+      if (cal.sign == 'x') {
+        setCal({ ...cal, res: +cal.numOne * +cal.numTwo });
+      }
+      if (cal.sign == '/') {
+        setCal({ ...cal, res: +cal.numOne / +cal.numTwo });
+      }
+    }
+    console.log(cal.res);
+  };
   return (
-    <globalContext.Provider value={{ controlNum }}>
+    <globalContext.Provider value={{ controlNum, evaluteFunction, detectSign }}>
       {children}
     </globalContext.Provider>
   );

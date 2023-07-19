@@ -1,9 +1,14 @@
 import React from 'react';
 
-const Button = ({ item }) => {
+const Button = ({ item, onclick }) => {
   return (
     <div>
-      <button onClick={() => console.log(item)} value={item}>
+      <button
+        onClick={() => {
+          onclick();
+        }}
+        value={item}
+      >
         {item}
       </button>
     </div>

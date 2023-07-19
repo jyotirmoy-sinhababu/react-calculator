@@ -1,12 +1,15 @@
 import './App.css';
 
 import Wrapper from './wrapper/Wrapper';
+import DataProvider from './dataContext/DataProvider';
 
 function App() {
   return (
-    <div className='App'>
-      <Wrapper />
-    </div>
+    <DataProvider>
+      <div className='App'>
+        <Wrapper />
+      </div>
+    </DataProvider>
   );
 }
 

@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { globalContext } from '../../dataContext/DataProvider';
 
-const Button = ({ item, onclick }) => {
+const Button = ({ item }) => {
+  const { controlNum } = useContext(globalContext);
+
   return (
     <div>
       <button
         onClick={() => {
-          onclick();
+          controlNum(item);
         }}
         value={item}
       >

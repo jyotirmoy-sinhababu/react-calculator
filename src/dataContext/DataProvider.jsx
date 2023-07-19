@@ -16,8 +16,10 @@ const DataProvider = ({ children }) => {
       ? setCal({ ...cal, numOne: cal.numOne + value })
       : setCal({ ...cal, numTwo: cal.numTwo + value });
   };
+
   console.log(cal.numOne);
   console.log(cal.numTwo);
+
   const detectSign = (value) => {
     if (value == '+' || value == '-' || value == 'x' || value == '/') {
       setCal({ ...cal, sign: value });

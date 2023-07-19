@@ -41,10 +41,19 @@ const DataProvider = ({ children }) => {
         setCal({ ...cal, res: +cal.numOne / +cal.numTwo });
       }
     }
-    console.log(cal.res);
   };
+  console.log(cal.res);
+
+  const resetFunction = (reset) => {
+    if (reset) {
+      setCal({ ...cal, numOne: '', numTwo: '', sign: '', res: '' });
+    }
+  };
+
   return (
-    <globalContext.Provider value={{ controlNum, evaluteFunction, detectSign }}>
+    <globalContext.Provider
+      value={{ controlNum, evaluteFunction, detectSign, resetFunction, cal }}
+    >
       {children}
     </globalContext.Provider>
   );

@@ -13,6 +13,7 @@ const Screen = () => {
         <p>{cal.numOne}</p>
         <p>{cal.sign}</p>
         <p>{cal.numTwo}</p>
+        {cal.err ? <p>{cal.err}</p> : null}
       </div>
       <div className='screen-bottom'>
         <p>{cal.res}</p>

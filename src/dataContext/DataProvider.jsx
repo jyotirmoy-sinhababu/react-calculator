@@ -9,20 +9,27 @@ const DataProvider = ({ children }) => {
     numTwo: '',
     sign: '',
     res: '',
+    err: '',
   });
 
   const controlNum = (value) => {
     !cal.sign
-      ? setCal({ ...cal, numOne: cal.numOne + value })
-      : setCal({ ...cal, numTwo: cal.numTwo + value });
+      ? setCal({ ...cal, numOne: cal.numOne + value, err: '' })
+      : setCal({ ...cal, numTwo: cal.numTwo + value, err: '' });
   };
 
   console.log(cal.numOne);
   console.log(cal.numTwo);
 
   const detectSign = (value) => {
-    if (value == '+' || value == '-' || value == 'x' || value == '/') {
-      setCal({ ...cal, sign: value });
+    if (
+      ((value == '+' || value == '-' || value == 'x' || value == '/') &&
+        cal.numOne != '') ||
+      cal.numTwo != ''
+    ) {
+      setCal({ ...cal, sign: value, err: '' });
+    } else {
+      setCal({ ...cal, err: 'put integer' });
     }
   };
 

@@ -4,7 +4,7 @@ import { globalContext } from '../../dataContext/DataProvider';
 import './btnStyle.css';
 
 const Button = ({ item }) => {
-  const { controlNum, detectSign, evaluteFunction, resetFunction } =
+  const { controlNum, detectSign, evaluteFunction, resetFunction, cancelBtn } =
     useContext(globalContext);
 
   return (
@@ -17,6 +17,8 @@ const Button = ({ item }) => {
           ? resetFunction(item)
           : item == '='
           ? evaluteFunction()
+          : item == 'DEL'
+          ? cancelBtn(item)
           : controlNum(item);
       }}
       value={item}

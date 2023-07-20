@@ -9,11 +9,12 @@ const Screen = () => {
   return (
     <div className='screen'>
       {' '}
-      <div>
+      <div className='screen-top'>
         <p>{cal.numOne}</p>
+        <p>{cal.sign}</p>
         <p>{cal.numTwo}</p>
       </div>
-      <div>
+      <div className='screen-bottom'>
         <p>{cal.res}</p>
       </div>
     </div>

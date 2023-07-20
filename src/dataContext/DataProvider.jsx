@@ -50,9 +50,25 @@ const DataProvider = ({ children }) => {
     }
   };
 
+  const cancelBtn = (del) => {
+    if (del && cal.numOne) {
+      setCal({ ...cal, numOne: cal.numOne.slice(0, -1), sign: '' });
+    }
+    if (del && cal.numTwo) {
+      setCal({ ...cal, numTwo: cal.numTwo.slice(0, -1) });
+    }
+  };
+
   return (
     <globalContext.Provider
-      value={{ controlNum, evaluteFunction, detectSign, resetFunction, cal }}
+      value={{
+        controlNum,
+        evaluteFunction,
+        detectSign,
+        resetFunction,
+        cal,
+        cancelBtn,
+      }}
     >
       {children}
     </globalContext.Provider>

@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { globalContext } from '../../dataContext/DataProvider';
 
+import './screenStyle.css';
+
 const Screen = () => {
   const { cal } = useContext(globalContext);
 
   return (
-    <div>
+    <div className='screen'>
       {' '}
       <div>
         <p>{cal.numOne}</p>

@@ -6,9 +6,12 @@ import './wrapperStyle.css';
 
 const Wrapper = () => {
   return (
-    <div className='wrapper'>
-      <Screen />
-      <BtnWrapper />
+    <div className='wrapper-box'>
+      {' '}
+      <div className='wrapper'>
+        <Screen />
+        <BtnWrapper />
+      </div>
     </div>
   );
 };

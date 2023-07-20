@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from '../btnCnt/Button';
 
+import './btnWrapperStyle.css';
+
 const btnArr = [
   '7',
   '8',
@@ -24,7 +26,7 @@ const btnArr = [
 
 const BtnWrapper = () => {
   return (
-    <div>
+    <div className='buttonBox'>
       {btnArr?.map((item, i) => {
         return (
           <div key={i}>

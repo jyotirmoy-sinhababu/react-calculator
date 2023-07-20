@@ -28,11 +28,7 @@ const BtnWrapper = () => {
   return (
     <div className='buttonBox'>
       {btnArr?.map((item, i) => {
-        return (
-          <div key={i}>
-            <Button item={item} />
-          </div>
-        );
+        return <Button key={i} item={item} />;
       })}
     </div>
   );

@@ -18,3 +18,21 @@
 .wrapperOn {
   background-color: hsl(36, 15%, 87%);
 }
+
+@media screen and (max-width: 440px) {
+  .wrapper {
+    width: 340px;
+    height: 480px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #485461;
+  }
+  .wrapper-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding-top: 8%;
+  }
+}

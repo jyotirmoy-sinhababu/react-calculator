@@ -68,6 +68,10 @@ const DataProvider = ({ children }) => {
     }
   };
 
+  const toggleOn = () => {
+    !isActive ? setIsActive(true) : setIsActive(false);
+  };
+
   return (
     <globalContext.Provider
       value={{
@@ -76,7 +80,7 @@ const DataProvider = ({ children }) => {
         detectSign,
         resetFunction,
         cancelBtn,
-        setIsActive,
+        toggleOn,
         cal,
         isActive,
       }}

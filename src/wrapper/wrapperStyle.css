@@ -14,3 +14,7 @@
   align-items: center;
   padding-top: 2%;
 }
+
+.wrapperOn {
+  background-color: hsl(36, 15%, 87%);
+}

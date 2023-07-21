@@ -20,9 +20,6 @@ const DataProvider = ({ children }) => {
       : setCal({ ...cal, numTwo: cal.numTwo + value, err: '' });
   };
 
-  console.log(cal.numOne);
-  console.log(cal.numTwo);
-
   const detectSign = (value) => {
     if (
       ((value == '+' || value == '-' || value == 'x' || value == '/') &&
@@ -51,7 +48,6 @@ const DataProvider = ({ children }) => {
       }
     }
   };
-  console.log(cal.res);
 
   const resetFunction = (reset) => {
     if (reset) {

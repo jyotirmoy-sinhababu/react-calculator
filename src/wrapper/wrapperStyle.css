@@ -9,6 +9,8 @@
 .wrapper-box {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  gap: 20px;
   align-items: center;
-  padding-top: 8%;
+  padding-top: 2%;
 }

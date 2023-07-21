@@ -4,6 +4,8 @@ import { createContext } from 'react';
 export const globalContext = createContext();
 
 const DataProvider = ({ children }) => {
+  const [isActive, setIsActive] = useState(false);
+
   const [cal, setCal] = useState({
     numOne: '',
     numTwo: '',
@@ -73,8 +75,10 @@ const DataProvider = ({ children }) => {
         evaluteFunction,
         detectSign,
         resetFunction,
-        cal,
         cancelBtn,
+        setIsActive,
+        cal,
+        isActive,
       }}
     >
       {children}
